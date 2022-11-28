@@ -42,6 +42,7 @@ public class AutosColombiaFrame extends javax.swing.JFrame {
         salidaBtn = new javax.swing.JButton();
         finBtn = new javax.swing.JButton();
         nuevoUsuarioBtn = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Autos Colombia");
@@ -52,9 +53,11 @@ public class AutosColombiaFrame extends javax.swing.JFrame {
         setPreferredSize(new java.awt.Dimension(740, 450));
         setSize(new java.awt.Dimension(0, 0));
 
+        mainPnl.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         mainPnl.setPreferredSize(new java.awt.Dimension(732, 550));
 
         ingresoPnl.setBackground(new java.awt.Color(255, 255, 255));
+        ingresoPnl.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jLabel2.setFont(new java.awt.Font("Franklin Gothic Book", 0, 36)); // NOI18N
         jLabel2.setText("Ingreso");
@@ -111,6 +114,7 @@ public class AutosColombiaFrame extends javax.swing.JFrame {
         );
 
         salidaPnl.setBackground(new java.awt.Color(255, 255, 255));
+        salidaPnl.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         salidaPnl.setPreferredSize(new java.awt.Dimension(224, 308));
 
         jLabel1.setFont(new java.awt.Font("Franklin Gothic Book", 0, 36)); // NOI18N
@@ -172,9 +176,21 @@ public class AutosColombiaFrame extends javax.swing.JFrame {
         });
 
         nuevoUsuarioBtn.setText("Nuevo Usuario");
+        nuevoUsuarioBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                nuevoUsuarioBtnMouseClicked(evt);
+            }
+        });
         nuevoUsuarioBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nuevoUsuarioBtnActionPerformed(evt);
+            }
+        });
+
+        jButton1.setText("Pagos");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
             }
         });
 
@@ -182,6 +198,7 @@ public class AutosColombiaFrame extends javax.swing.JFrame {
         mainPnl.setLayer(salidaPnl, javax.swing.JLayeredPane.DEFAULT_LAYER);
         mainPnl.setLayer(finBtn, javax.swing.JLayeredPane.DEFAULT_LAYER);
         mainPnl.setLayer(nuevoUsuarioBtn, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        mainPnl.setLayer(jButton1, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout mainPnlLayout = new javax.swing.GroupLayout(mainPnl);
         mainPnl.setLayout(mainPnlLayout);
@@ -192,6 +209,8 @@ public class AutosColombiaFrame extends javax.swing.JFrame {
                 .addGroup(mainPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(mainPnlLayout.createSequentialGroup()
                         .addComponent(nuevoUsuarioBtn)
+                        .addGap(37, 37, 37)
+                        .addComponent(jButton1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(finBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(mainPnlLayout.createSequentialGroup()
@@ -210,7 +229,8 @@ public class AutosColombiaFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
                 .addGroup(mainPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(finBtn)
-                    .addComponent(nuevoUsuarioBtn))
+                    .addComponent(nuevoUsuarioBtn)
+                    .addComponent(jButton1))
                 .addGap(24, 24, 24))
         );
 
@@ -233,8 +253,20 @@ public class AutosColombiaFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_finBtnActionPerformed
 
     private void nuevoUsuarioBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nuevoUsuarioBtnActionPerformed
-        
+        NuevoUsuario nuevoUsuario = new NuevoUsuario();
+        nuevoUsuario.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_nuevoUsuarioBtnActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        Pagos pagos = new Pagos();
+        pagos.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void nuevoUsuarioBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nuevoUsuarioBtnMouseClicked
+        
+    }//GEN-LAST:event_nuevoUsuarioBtnMouseClicked
 
     /**
      * @param args the command line arguments
@@ -277,6 +309,7 @@ public class AutosColombiaFrame extends javax.swing.JFrame {
     private javax.swing.JButton finBtn;
     private javax.swing.JButton ingresoBtn;
     private javax.swing.JPanel ingresoPnl;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
